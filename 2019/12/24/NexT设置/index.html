@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://wuyungen.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Next为常用设置及高级设置能够帮助你独立搭建一个Next主题的博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NexT入门实践">
+<meta property="og:url" content="http://wuyungen.github.io/2019/12/24/NexT%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="根我一起学">
+<meta property="og:description" content="Next为常用设置及高级设置能够帮助你独立搭建一个Next主题的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://wuyungen.github.io/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143012841.png">
+<meta property="og:image" content="http://wuyungen.github.io/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143259631.png">
+<meta property="og:image" content="http://wuyungen.github.io/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143339704.png">
+<meta property="article:published_time" content="2019-12-24T04:46:33.000Z">
+<meta property="article:modified_time" content="2019-12-24T08:14:41.221Z">
+<meta property="article:author" content="Agen">
+<meta property="article:tag" content="根我一起学，编程开发，设计，PPT，魔方，读书">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://wuyungen.github.io/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143012841.png">
+
+<link rel="canonical" href="http://wuyungen.github.io/2019/12/24/NexT%E8%AE%BE%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>NexT入门实践 | 根我一起学</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">根我一起学</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wuyungen.github.io/2019/12/24/NexT%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Agen">
+      <meta itemprop="description" content="人只有学会了学习的方法，才能进步">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="根我一起学">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          NexT入门实践
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-24 12:46:33 / 修改时间：16:14:41" itemprop="dateCreated datePublished" datetime="2019-12-24T12:46:33+08:00">2019-12-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Next为常用设置及高级设置能够帮助你独立搭建一个Next主题的博客</p>
+<a id="more"></a>
+
+<h2 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h2><h3 id="启用Next主题"><a href="#启用Next主题" class="headerlink" title="启用Next主题"></a>启用Next主题</h3><p><strong>第一步、</strong>使用编辑器打开hexo的配置文件<code>_config.yml</code>；</p>
+<p><strong>第二步、</strong>找到Extensions（扩展）下面的<code>theme</code>属性，将默认主题 <code>landscape</code> 改为  <code>next</code>；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">#theme: landscape</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三步、</strong>启动hexo服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> → hexo s</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>最终效果如下所示</p>
+<h3 id="Site（网站）设置"><a href="#Site（网站）设置" class="headerlink" title="Site（网站）设置"></a>Site（网站）设置</h3><ul>
+<li>设置标题<code>title</code>为<code>根我一起学</code></li>
+<li>设置网站描述<code>subtitle</code></li>
+<li>设置描述<code>description</code>为``</li>
+<li>设置关键字<code>keywords</code></li>
+<li>设置作者<code>author</code></li>
+<li>设置语言<code>language:</code></li>
+<li>设置<code>timezone</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 根我一起学</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;根我一起学，编程开发、设计、PPT、魔方、读书&#39;</span><br><span class="line">keywords: &#39;根我一起学，编程开发、设计、PPT、魔方、读书&#39;</span><br><span class="line">author: Agen</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#39;&#39;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置标签页及分类页"><a href="#设置标签页及分类页" class="headerlink" title="设置标签页及分类页"></a>设置标签页及分类页</h3><p><strong>第一步、</strong>打开next主题配置文件<code>_config.yml</code></p>
+<p><strong>第二步、</strong>找到<code>Menu Settings</code>下的<code>menu</code>将<code>tags</code> 和<code>categories</code>前面的注释符去掉，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  #about: &#x2F;about&#x2F; || user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F; || calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml || sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || heartbeat</span><br></pre></td></tr></table></figure>
+
+<p><em>目前打开标签页及分类页是会报错的</em></p>
+<p><strong>第三步、</strong>打开终端进入Blog目录执行如下命令，会在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 创建标签页面</span><br><span class="line">→ hexo new page tags</span><br><span class="line">INFO  Created: ~&#x2F;Blog&#x2F;source&#x2F;tags&#x2F;index.md</span><br><span class="line"></span><br><span class="line"># 创建分类页面</span><br><span class="line"> → hexo new page categories</span><br><span class="line">INFO  Created: ~&#x2F;Blog&#x2F;source&#x2F;categories&#x2F;index.md</span><br></pre></td></tr></table></figure>
+
+<p>第四步、修改<code>/Blog/source/</code>下的<code>tags</code>目录和<code>categories</code>目录下的<code>index.md</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># tags源文件</span><br><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2019-12-24 14:03:22</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># 1. 将title的值改为标签</span><br><span class="line"># 2. 添加type:”tags“,否则页面不显示标签</span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-12-24 14:03:22</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># categories源文件</span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-12-24 14:06:10</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># 1. 将title的值改为分类</span><br><span class="line"># 2. 添加type:”categories“,否则页面不显示标签</span><br><span class="line"></span><br><span class="line"># </span><br><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-12-24 14:06:10</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="高级设置"><a href="#高级设置" class="headerlink" title="高级设置"></a>高级设置</h2><h3 id="将-Hexo-部署到-GitHub-Pages"><a href="#将-Hexo-部署到-GitHub-Pages" class="headerlink" title="将 Hexo 部署到 GitHub Pages"></a>将 Hexo 部署到 GitHub Pages</h3><h4 id="github设置"><a href="#github设置" class="headerlink" title="github设置"></a>github设置</h4><p>New repository</p>
+<p>新建一个名为<code>你的用户名.github.io</code>的仓库,例如我的<code>wuyungen.github.io</code>。</p>
+<ol>
+<li>仓库名字必须是：<code>username.github.io</code>，其中<code>username</code>是你的用户名；</li>
+<li>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；</li>
+<li>每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库</li>
+</ol>
+<p><img src="/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143012841.png" alt="image-20191224143012841"></p>
+<p>设置名字</p>
+<p><img src="/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143259631.png" alt="image-20191224143259631"></p>
+<p>设置完成</p>
+<p><img src="/Users/wuyungen/Blog/source/_posts/NexT%E8%AE%BE%E7%BD%AE.assets/image-20191224143339704.png" alt="image-20191224143339704"></p>
+<h4 id="终端设置"><a href="#终端设置" class="headerlink" title="终端设置"></a>终端设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 安装githexo插件</span><br><span class="line">→ npm install --save hexo-deployer-git</span><br><span class="line">+ hexo-deployer-git@2.1.0</span><br><span class="line">added 1 package from 1 contributor in 2.896s</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 你的github用户名，非昵称</span><br><span class="line">$ git config --global user.name &quot;wuyungen&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 填写你的github注册邮箱</span><br><span class="line">$ git config --global user.email  &quot;wuyungen@gmail.com&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="配置文件设置"><a href="#配置文件设置" class="headerlink" title="配置文件设置"></a>配置文件设置</h4><p><code>_config.yml</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  ropo: https:&#x2F;&#x2F;github.com&#x2F;wuyungen&#x2F;wuyungen.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/24/Homebrew/" rel="prev" title="Homebrew入门到实战">
+      <i class="fa fa-chevron-left"></i> Homebrew入门到实战
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用设置"><span class="nav-number">1.</span> <span class="nav-text">常用设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启用Next主题"><span class="nav-number">1.1.</span> <span class="nav-text">启用Next主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Site（网站）设置"><span class="nav-number">1.2.</span> <span class="nav-text">Site（网站）设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置标签页及分类页"><span class="nav-number">1.3.</span> <span class="nav-text">设置标签页及分类页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级设置"><span class="nav-number">2.</span> <span class="nav-text">高级设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将-Hexo-部署到-GitHub-Pages"><span class="nav-number">2.1.</span> <span class="nav-text">将 Hexo 部署到 GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github设置"><span class="nav-number">2.1.1.</span> <span class="nav-text">github设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端设置"><span class="nav-number">2.1.2.</span> <span class="nav-text">终端设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">2.1.3.</span> <span class="nav-text">配置SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件设置"><span class="nav-number">2.1.4.</span> <span class="nav-text">配置文件设置</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Agen</p>
+  <div class="site-description" itemprop="description">人只有学会了学习的方法，才能进步</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Agen</span>
+</div>
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备19054523号-1 </a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
